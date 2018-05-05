@@ -7,14 +7,16 @@ $(document).ready(function () {
         if(($(this).text() === '')&&(mark ==='X')) {
             mark ='0';
             $(this).text('0');
-            count++ ;
+            check();
+            count = count+1 ;
             $('.right').css({"background-color":"#26A69A" , "color" : "white"});
             $('.left').css({"background-color":"white" , "color" : "#26A69A"});
         }
         else if(($(this).text() === '')&&(mark ==='0')) {
             mark = 'X';
             $(this).text('X');
-            count++ ;
+            check();
+            count = count+1 ;
             $('.left').css({"background-color":"#26A69A" , "color" : "white"});
             $('.right').css({"background-color":"white" , "color" : "#26A69A"});
         }
@@ -31,7 +33,7 @@ $(document).ready(function () {
     function disable() {
         $('.block').css({'pointer-events':'none','background-color' :'rgba(38, 166, 154,0.5)'});
     }
-    setInterval( function () {
+    function check() {
         var b = document.getElementsByClassName('block');
         var playerNo;
         if((b[0].innerHTML=== b[1].innerHTML) &&(b[1].innerHTML === b[2].innerHTML)) {
@@ -90,19 +92,21 @@ $(document).ready(function () {
                 disable()
             }
         }
-        else if(count===9) {
+        else if(count >= 9) {
             $('h1').text('Draw !');
             disable()
         }
 
-    } , 500);
+    }
 
     $('.restart').click(function () {
         var b = document.getElementsByClassName('block');
         var i;
+        count=0;
         for(i=0;i<9;i++) {
             b[i].innerHTML= '';
         }
+        mark='X';
         $('h1').text('');
         $('.block').css({'pointer-events':'auto','background-color' :'rgba(38, 166, 154,1)'});
     });
