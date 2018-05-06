@@ -45,8 +45,8 @@ h1 {
     color: white;
     font-size: 50px;
     border: 2px solid white;
-    width: 100px;
-    height: 100px;
+    width: 33.33%;
+    height: 33.33%;
     padding: 16px 0;
     background: #26A69A;
 }
@@ -61,12 +61,12 @@ h1 {
     background-color: #00897B ;
 }
 .restart {
-    width: 16%;
-    padding: 20px;
+    width: 100px;
+    padding: 15px;
     margin: 40px auto 0;
     text-align: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    font-size: 30px;
+    font-size: 130%;
     color: #00897B;
     border: 2px solid #00897B;
     cursor: pointer;
